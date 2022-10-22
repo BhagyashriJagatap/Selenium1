@@ -1,0 +1,13 @@
+System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+	    driver.get("https://jqueryui.com/draggable/");
+	    driver.switchTo().frame(0);
+	    WebElement dest=driver.findElement(By.id("draggable"));
+	   
+	   Actions actions =new Actions(driver);
+       actions.dragAndDropBy(dest,100,50).perform();
+	}
+
+	
